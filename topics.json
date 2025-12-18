@@ -1,6 +1,4 @@
-
 [
-  "Node.js Event Loop explained through execution phases and real production tradeoffs",
   "How async and await really works inside JavaScript engine",
   "Database indexing deep dive: B-Tree vs Hash indexes",
   "When and why Redis becomes a bottleneck",
