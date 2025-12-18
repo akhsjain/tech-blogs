@@ -10,26 +10,37 @@ if (!topic) {
 }
 
 const prompt = `
-You are a senior backend engineer writing a deep technical Medium blog.
+You are a senior backend engineer writing a deep technical Medium article.
 
 Topic: ${topic}
 
 Audience:
-- Experienced developers (3–8 years)
-- System design interview preparation
+- Experienced software engineers (3–10 years)
+- Backend / System design focused
 
-Rules:
-- Explain internal mechanics
-- Use real-world examples
-- Discuss tradeoffs
-- Avoid generic explanations
-- Clear headings
-- 1200–1500 words
+Guidelines:
+- Start with a real-world problem that engineers face
+- Build a mental model before details
+- Explain internals step-by-step
+- Include at least 1 realistic production example
+- Explicitly call out tradeoffs and limitations
+- Avoid textbook definitions
+- No marketing or generic AI tone
+
+Structure:
+1. Why this problem exists
+2. Core concept (mental model)
+3. Internal mechanics
+4. Real-world example
+5. Common misconceptions
+6. Tradeoffs & when NOT to use it
+7. Interview perspective
 
 End with:
-- Key takeaways
-- 3 interview questions
-`;
+- Key takeaways (bullets)
+- 3 system design interview questions
+
+Length: 1200–1500 words`;
 
 async function generate() {
   const response = await fetch(
