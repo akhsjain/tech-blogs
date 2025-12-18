@@ -48,6 +48,13 @@ async function generate() {
   );
 
   const data = await response.json();
+
+  if (!data.choices || !data.choices.length) {
+    console.error("Groq API Error Response:");
+    console.error(JSON.stringify(data, null, 2));
+    process.exit(1);
+  }
+
   const content = data.choices[0].message.content;
 
   const date = new Date().toISOString().split("T")[0];
@@ -56,7 +63,6 @@ async function generate() {
     .replace(/[^a-z0-9]+/g, "-")}.md`;
 
   fs.writeFileSync(fileName, content);
-
   fs.writeFileSync("topics.json", JSON.stringify(topics, null, 2));
 
   console.log(`Draft created: ${fileName}`);
