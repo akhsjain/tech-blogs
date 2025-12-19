@@ -1,5 +1,4 @@
 [
-  "Database indexing deep dive: B-Tree vs Hash indexes",
   "When and why Redis becomes a bottleneck",
   "CAP theorem explained using real distributed systems"
 ]
